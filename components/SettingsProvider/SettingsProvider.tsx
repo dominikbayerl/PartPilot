@@ -35,7 +35,7 @@ export default function SettingsProvider({children}: Props) {
 		const storedSettings = localStorage.getItem(settingsKey);
 		if (storedSettings) updateSettings({...JSON.parse(storedSettings), initialized: true})
 		else updateSettings( {initialized: true})
-	}, [])
+	}, [updateSettings])
 
 	useWindowEvent('keydown', e => {
 		if (e.ctrlKey && e.key === 'j') updateSettings({paletteMode: settings.paletteMode === 'dark' ? 'light' : 'dark'})

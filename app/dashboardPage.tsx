@@ -174,6 +174,7 @@ export default function DashboardPage({
 				console.log("onScan already attached to document");
 			}
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	const updatePartInState = (part: PartState) => {
@@ -607,11 +608,11 @@ function PartItem({
 	return (
 		<Table.Tr key={part.id}>
 			<Table.Td>
-				<img
+				<Image
 					src={part.productImages[0]}
-					// alt={part.title}
-					width="100"
-					height="100"
+					alt={part.title}
+					w={100}
+					h={100}
 				/>
 			</Table.Td>
 			<Table.Td>
